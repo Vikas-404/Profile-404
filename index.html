@@ -6,8 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> Vikas Assudani </title>
     <style>
+        :root {
+            --blur:blur(30px);
+        }
         * {
-    font-family: 'Space Mono', monospace;
+            font-family: 'JetBrains Mono', monospace;
 }
 
 body {
@@ -57,8 +60,8 @@ body {
     background: rgba( 255, 255, 255, 0.2 );
     box-shadow: 0 8px 32px 0 #3e3e3e50; 
     /* rgba( 31, 38, 135, 0.37 ); */
-    backdrop-filter: blur( 11px );
-    -webkit-backdrop-filter: blur( 11px );
+    backdrop-filter: var(--blur);
+    -webkit-backdrop-filter: var(--blur);
     border-radius: 10px;
     border: 1px solid #ffffff;
     /* rgba( 255, 255, 255, 0.18 ); */
@@ -72,6 +75,10 @@ body {
     font-size: 30px;
     /* margin-left: 2em;
     margin-top: 1em; */
+}
+
+#nm {
+    font-weight: 800;
 }
 
 .instruction {
@@ -110,8 +117,8 @@ body {
     margin-top: 50%;
     margin-left: 300px;
     border:1px solid #ffffff;
-    border-radius: 8px 8px 0 0;
-    backdrop-filter: blur(11px);
+    border-radius: 8px;
+    backdrop-filter: var(--blur);
     color: Black;
     padding-top: 20px;
 }
@@ -140,7 +147,7 @@ body {
     float: right;
     /* border: 2px solid white; */
     border-radius: 500px;
-    backdrop-filter: blur(20px);
+    backdrop-filter: var(--blur);
     box-shadow: 0px 16px 32px 0 #3e3e3e40;
     /* padding: 5px; */
     border: 1px solid #3e3e3e;
@@ -158,8 +165,21 @@ body {
 .navbar:hover {
     border: 2px solid black;
     border-style:dashed;
-    transition: .3s;
+    transition: 1s;
     cursor: help;
+    box-shadow: 0px 32px 64px 0 #3e3e3e80;
+}
+
+#ldlink:hover {
+    letter-spacing: 2px;
+    text-decoration: underline;
+    transition: .5s
+}
+
+#ghlink:hover {
+    letter-spacing: 2px;
+    text-decoration: underline;
+    transition: .5s
 }
 
 #logo {
@@ -193,10 +213,27 @@ body {
     display: none;
 }
 
+#about {
+    width: 100%;
+    height: 80px;
+    background-color: #ffffff50;
+    position: absolute;
+    margin-top: 90%;
+    backdrop-filter: var(--blur);
+    border-radius: 16px;
+    text-align: center;
+    list-style-type: none;
+    padding-top: 20px;
+
+}
+
     </style>
     <!-- <link rel="stylesheet" href="style.css"> -->
     <script src="https://kit.fontawesome.com/5abd433414.js" crossorigin="anonymous"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@100;300;400;500;700;800&display=swap" rel="stylesheet">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="//code.jquery.com/ui/1.13.1/themes/base/jquery-ui.css">
@@ -214,27 +251,35 @@ body {
     <div class="navbar">
         <ul>
             <li> <div id="logo"> </div> </li>
-            <li> <a href="#sec1"><font color="white"> Section 1 </font> </a> </li>
+            <li> <a href="#sec1"> <font color="white"> Section 1  </a> </li>
             <!-- <li> Section 2 </li> -->
-            <li> LinkeDin  </li>
-            <li> GitHub </li>
+            <li id="ldlink"> <a href="https://www.linkedin.com/in/vikasassudani/" style="color:white;" target="_blank">  LinkeDin </a> </li>
+            <li id="ghlink"> <a href="https://github.com/Vikas-404" style="color:white;" target="_blank">  GitHub </a> </font> </li>
         </ul>
     </div>
   <section class="intro">
     <div class="container">
-        <h1>Hey, Myself <font color="white"> Vikas </font> </h1>
+        <h1>Hey, Myself <font color="white"> <span id="nm"> Vikas </span> </font> </h1>
         <div class="instruction">
           The square above can be drag and drop anywhere on the Webpage 
         </div>
         <!-- <img src="https://cdn.pixabay.com/photo/2020/02/09/09/39/smiley-4832495_960_720.png"> -->
     </div>
   </section>
-  <i class="fa-solid fa-chevron-down fa-beat" id="downarrow"></i>
+  <a href="#about"> <i class="fa-solid fa-chevron-down fa-beat" id="downarrow"> </i> </a>
   <section class="profilecontainer">
     <center>
     <span id="sec1"> Setion 1 </span>
     <!-- <span id="sec2"> Section 2</span> -->
     </center>
   </section>
+  <footer id="about">
+
+    <li>
+    Student at Silver Oak University pursuing BCA
+    </li>
+    <li> Currently working as an User Interface and User Experience Designer Intern at MB Infoways
+    </li>
+  </footer>
 </body>
 </html>
